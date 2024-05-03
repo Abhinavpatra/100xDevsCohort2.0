@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text" ></div>
+    
+    <div class="cl">ab1</div>
+    <div class="cl2">ab2</div>
+    <div class="cl3">ab3</div>
+    <div class="cl4">ab4</div>
+    <div class="cl5">ab5</div>
+    <div class="cl6"></div>
+    <input type="number" id="numberEntered">
+    <button onclick="changetoAbhinav()"> press me</button>
+
+</body>
+<script>
+    let i=1;
+
+    
+   changetoAbhinav=() =>{
+    let a=1;
+    a=document.getElementById("numberEntered").value;
+    if(!a)
+    a=1;
+    document.getElementsByClassName("cl6")[0].textContent="tu hai "+a+" numberi bewakoof";
+    i++;
+    if(i%2==0)
+    {
+    document.getElementsByClassName("cl")[0].textContent="abhinav";
+    }
+    else
+    {
+    document.getElementsByClassName("cl")[0].textContent="ab1";
+       
+    }
+    document.getElementById("text").textContent=a;
+    }
+</script>
+</html>
