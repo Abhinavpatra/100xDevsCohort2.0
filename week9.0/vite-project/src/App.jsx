@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import React from 'react'; // or {Component} from React
-import './App.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 function App() {
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    axios.get("https://sum-server.100xdevs.com/todos")
+      .then(res => {
+        setTodos(res.data.todos);
+      })
+  }, [])
 
   return (
     <>
-     <MyComponent/>
+      {todos.map(todo => <Track todo={todo} />)}
     </>
-  )   
+  )
 }
 
-
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-  }
-
-  incrementCount = () => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  render() {
-    return (
-      <div>
-        <p>{this.state.count}</p>
-        <button onClick={this.incrementCount}>Increment</button>
-      </div>
-    );
-  }
+function Track({ todo }) {
+  return <div>
+    {todo.title}
+    <br />
+    {todo.description}
+  </div>
 }
+
 export default App
