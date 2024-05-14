@@ -3,7 +3,6 @@ import axios from 'axios'
 
 function App() {
   const [todos, setTodos] = useState([])
-
   useEffect(() => {
     axios.get("https://sum-server.100xdevs.com/todos")
       .then(res => {
@@ -17,7 +16,6 @@ function App() {
     </>
   )
 }
-
 function Track({ todo }) {
   return <div>
     {todo.title}
@@ -25,5 +23,4 @@ function Track({ todo }) {
     {todo.description}
   </div>
 }
-
-export default App
+export default App;
