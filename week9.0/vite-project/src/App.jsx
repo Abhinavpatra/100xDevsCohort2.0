@@ -4,7 +4,7 @@ import axios from 'axios'
 function App() {
   const [todos, setTodos] = useState([])
   useEffect(() => {
-    axios.get("https://sum-server.100xdevs.com/todo")
+    axios.get("https://sum-server.100xdevs.com/todos")
       .then(res => {
         setTodos(res.data.todos);
       })
