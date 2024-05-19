@@ -1,14 +1,39 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function App() {
+function useTodos(n) {
+  const [loading, setLoading] = useState(true);
   const [todos, setTodos] = useState([])
-  useEffect(() => {
+
+  function getData() {
     axios.get("https://sum-server.100xdevs.com/todos")
       .then(res => {
         setTodos(res.data.todos);
+        setLoading(false);
       })
-  }, [])
+  }
+
+  useEffect(() => {
+    setInterval(() => {
+      getData();
+    }, n * 1000)
+    getData();
+  }, [n])
+
+  return {
+    todos: todos,
+    loading: loading
+  };
+}
+
+function App() {
+  const { todos, loading } = useTodos(5);
+
+  if (loading) {
+    return <div>
+      Loading...
+    </div>
+  }
 
   return (
     <>
@@ -24,4 +49,5 @@ function Track({ todo }) {
     {todo.description}
   </div>
 }
-export default App;
+
+export default App
