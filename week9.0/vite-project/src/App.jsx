@@ -2,37 +2,45 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function useTodos(n) {
-  const [loading, setLoading] = useState(true);
   const [todos, setTodos] = useState([])
+  const [loading, setLoading] = useState(true);
 
-  function getData() {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      axios.get("https://sum-server.100xdevs.com/todos")
+        .then(res => {
+          setTodos(res.data.todos);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error("Error fetching todos:", error);
+          setLoading(true);
+        });
+    }, n * 1000)
+  
     axios.get("https://sum-server.100xdevs.com/todos")
       .then(res => {
         setTodos(res.data.todos);
         setLoading(false);
       })
-  }
-
-  useEffect(() => {
-    setInterval(() => {
-      getData();
-    }, n * 1000)
-    getData();
+      .catch(error => {
+        console.error("Error fetching todos:", error);
+        setLoading(true);
+      });
+      return () => {
+        clearInterval(intervalId);
+      };
+  
   }, [n])
 
-  return {
-    todos: todos,
-    loading: loading
-  };
+  return {todos, loading};
 }
 
 function App() {
-  const { todos, loading } = useTodos(5);
+  const {todos, loading} = useTodos(10);
 
   if (loading) {
-    return <div>
-      Loading...
-    </div>
+    return <div> loading... </div>
   }
 
   return (
@@ -50,4 +58,4 @@ function Track({ todo }) {
   </div>
 }
 
-export default App
+export default App;
