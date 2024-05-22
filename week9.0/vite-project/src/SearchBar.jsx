@@ -10,14 +10,15 @@ const SearchBar = () => {
 
   // Integrate the debouncedValue in your component logic (e.g., trigger a search API call via a useEffect)
 
-  return (
+  return <>
+    {debouncedValue}
     <input
       type="text"
       value={inputValue}
       onChange={(e) => setInputValue(e.target.value)}
       placeholder="Search..."
     />
-  );
+  </>
 };
 
 export default SearchBar;
