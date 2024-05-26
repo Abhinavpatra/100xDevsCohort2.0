@@ -1,0 +1,1 @@
+import {add as addition, subtract as substraction } from './calc'
