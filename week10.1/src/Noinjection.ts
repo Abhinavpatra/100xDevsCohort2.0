@@ -9,7 +9,7 @@ connectionString:"postgresql://patraabhinav12:uEU8d9KgtRoF@ep-small-sun-01812222
   try {
     await client.connect(); // Ensure client connection is established
     // Use parameterized query to prevent SQL injection
-    const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+    const insertQuery = `INSERT INTO users (username, email, password) VALUES ($1, $2, $3)`;
     const values = [username, email, password];
     const res = await client.query(insertQuery, values);
     console.log('Insertion success:', res); // Output insertion result
@@ -19,6 +19,5 @@ connectionString:"postgresql://patraabhinav12:uEU8d9KgtRoF@ep-small-sun-01812222
     await client.end(); // Close the client connection
   }
 }
-
 // Example usage
 insertData('username5', 'user5@example.com', 'user_password').catch(console.error);
