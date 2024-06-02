@@ -4,7 +4,6 @@ import { Client } from 'pg'
 const client = new Client({
   connectionString: "postgresql://patraabhinav12:uEU8d9KgtRoF@ep-small-sun-01812222.us-east-2.aws.neon.tech/test?sslmode=require"
 })
-
 async function createUsersTable() {
     await client.connect()
     const result = await client.query(`
