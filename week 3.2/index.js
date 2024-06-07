@@ -7,8 +7,9 @@
 
         const finalData = await response.json();
         console.log(finalData);
+
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error wah wah:", error);
     }
 }
 getAnimatedData();
