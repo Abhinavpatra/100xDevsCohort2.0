@@ -12,3 +12,7 @@ datasource db {
   provider = "postgresql"
   url      = "postgresql://patraabhinav12:uEU8d9KgtRoF@ep-small-sun-01812222.us-east-2.aws.neon.tech/test?sslmode=require" //DATABASE_URL
 }
+
+model User{
+  id Int @id @default(autoincrement())
+}
