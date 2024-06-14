@@ -13,19 +13,18 @@ datasource db {
   url      = "postgresql://patraabhinav12:uEU8d9KgtRoF@ep-small-sun-01812222.us-east-2.aws.neon.tech/test?sslmode=require" //DATABASE_URL
 }
 
-model User{
-  id Int @id @default(autoincrement())
-  email String 
-  firstName String
-  lastName String
-  password String
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String
+  firstName String?
+  lastName  String
+  password  String?
 }
 
 model Todo {
-  id Int @id @default(autoincrement())
-  title String
-  done Boolean @default(false)
+  id          Int     @id @default(autoincrement())
+  title       String
+  done        Boolean @default(false)
   description String?
-  userId Int
-
+  userId      Int
 }
