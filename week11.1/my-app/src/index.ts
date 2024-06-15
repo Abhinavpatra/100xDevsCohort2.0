@@ -12,6 +12,7 @@
  */
 
 export default {
+	// Your code goes here...
 	async fetch(request, env, ctx): Promise<Response> {
 		return new Response('Hello World!');
 	},
