@@ -1,6 +1,3 @@
-
-
-
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		console.log(request.body);
@@ -10,7 +7,7 @@ export default {
 		
 		if (request.method === "GET") {
 			return Response.json({
-				message: "you sent a get request"
+				message: "you are most welcome."
 			});
 		} else {
 			return Response.json({
