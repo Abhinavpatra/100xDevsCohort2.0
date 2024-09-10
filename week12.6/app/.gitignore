@@ -1,3 +1,9 @@
+
+.toml
+wrangler.toml
+*.toml
+.env
+
 # Logs
 .md
 logs

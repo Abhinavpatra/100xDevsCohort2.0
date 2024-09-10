@@ -96,6 +96,18 @@ web_modules/
 
 # TypeScript cache
 
+.toml
+wrangler.toml
+*.toml
+.env
+prisma.md
+week11.1/my-app1/wrangler.toml
+week11.1/my-app/wrangler.toml
+MediumWeek13.1/medium/backend/wrangler.toml
+week12.6/app/wrangler.toml
+
+
+
 # Optional npm cache directory
 .npm
 
