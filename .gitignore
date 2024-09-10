@@ -6,7 +6,7 @@
 /node_modules
 /.pnp
 .pnp.js
-*.md
+*
 # testing
 /coverage
 
@@ -232,6 +232,11 @@ nunit-*.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
+# Ignore all .md files
+*.md
+
+
+
 
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
