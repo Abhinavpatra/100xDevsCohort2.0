@@ -2,12 +2,11 @@ export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		console.log(request.body);
 		console.log(request.headers);
-		console.log(request.method);
-		
+		console.log(request.method);		
 		
 		if (request.method === "GET") {
 			return Response.json({
-				message: "you are most welcome."
+				message: "Yo dumbass passing the exams or failing them?"
 			});
 		} else {
 			return Response.json({

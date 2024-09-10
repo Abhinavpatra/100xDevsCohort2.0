@@ -1,0 +1,6 @@
+ACCELERATED DATABASE_URL=
+"prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNTE2YTBlZWQtZjhjZi00YTViLWEyZDYtNGM4YzU5NmFjMGI5IiwidGVuYW50X2lkIjoiNTczY2JjZDg1YzJhZWU0ODNjNjZlZmVkNzRjNDcwNTdiNTIwZTg1YzQ3ZDExMmZjNGM2MDc1OGEyNjUyMmVkOCIsImludGVybmFsX3NlY3JldCI6Ijg1Njc2YTM2LWUyZTgtNGU2Yy05OGU1LWVmNmI2NzNjZjI5ZSJ9.0gEWDcybReo9hC-J76sOgCu7O5pNkBdOuh9ou5XifN4"
+
+DIRECT_URL="<YOUR_DATABASE_CONNECTION_STRING>"
+
+previous Database URL="postgres://avnadmin:AVNS_VL8pnYrBYVPMAP2dZoW@pg-48ae60e-patraabhinav12-0ef3.h.aivencloud.com:28699/defaultdb?sslmode=require"
