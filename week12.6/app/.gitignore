@@ -1,5 +1,5 @@
 # Logs
-
+.md
 logs
 _.log
 npm-debug.log_
@@ -170,3 +170,4 @@ dist
 
 .dev.vars
 .wrangler/
+prisma.md
