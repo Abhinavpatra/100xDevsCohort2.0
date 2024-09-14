@@ -12,8 +12,14 @@ import { cors } from 'hono/cors'
 const app = new Hono();
 
 app.use('/*', cors());
+
 app.route("api/v1/user", userRouter);
 app.route("api/v1/blog", blogRouter);
+app.get("/api/v1/anything", async(c)=>{
+  return c.json({
+    "message": "I work"
+  })
+}) ;
 
 // this is the middleware
 
