@@ -1,18 +1,21 @@
 import Avatar from "./Avatar"
+import { Link } from "react-router-dom"
 
 interface BlogCardProps {
+    id?: string,
     authorName: string,
     title: string,
     content: string,
     publishedDate: string
 }
 export default function BlogCard({
+    id,
     authorName,
     title,
     content,
     publishedDate
 }:BlogCardProps) {
-    return <>
+    return <Link to={`/blog/${id}`}>
     <div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-screen-md cursor-pointer ">
         
 
@@ -49,5 +52,5 @@ export default function BlogCard({
         </div>
     
     </div>
-</>
+</Link>
 }

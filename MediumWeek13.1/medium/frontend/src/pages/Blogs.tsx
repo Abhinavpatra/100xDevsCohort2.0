@@ -1,8 +1,10 @@
 import AppBar from "../components/AppBar";
 import BlogCard from "../components/BlogCard";
-import useBlogs from "../hooks";
+import SkeletonBlogs from "../components/SkeletonBlogs";
+import useBlogs from "../hooks/UseBlogs";
 
 interface Blog {
+    id:string,
     title: string;
     content: string;
     author?: {
@@ -12,10 +14,15 @@ interface Blog {
 
 export default function Blogs() {
     const { loading, blogs } = useBlogs();
-    console.log(blogs);
-
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>
+
+            <SkeletonBlogs />
+            <SkeletonBlogs />
+            <SkeletonBlogs />
+            <SkeletonBlogs />
+            <SkeletonBlogs />
+        </div>;
     }
 
     // Access the posts array from blogs
@@ -29,6 +36,8 @@ export default function Blogs() {
                 <div className="max-w-xl">
                     {posts.map((post: Blog, index: number) => (
                         <BlogCard
+                            id={post.id}
+                            key={index}
                             authorName={post?.author?.name || "Unknown"}
                             title={post.title}
                             content={post.content}
